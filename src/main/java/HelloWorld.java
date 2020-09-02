@@ -1,4 +1,4 @@
-package com.github.ruanbekker.docker-java-springboot-hello-world.springboot.basic;
+package com.github.ruanbekker.docker_java_springboot_hello_world.springboot.basic;
 
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
