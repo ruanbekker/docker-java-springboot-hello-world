@@ -28,3 +28,15 @@ Date: Wed, 02 Sep 2020 12:49:27 GMT
 
 Hello, World!
 ```
+
+Healthcheck:
+
+```
+$ curl -i http://localhost:8080/actuator/health
+HTTP/1.1 200
+Content-Type: application/vnd.spring-boot.actuator.v3+json
+Transfer-Encoding: chunked
+Date: Thu, 25 Feb 2021 13:30:09 GMT
+
+{"status":"UP"}
+```

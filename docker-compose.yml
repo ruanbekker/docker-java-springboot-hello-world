@@ -6,6 +6,10 @@ services:
     build:
       context: . 
       dockerfile: ./Dockerfile
+    environment:
+      - M2_HOME="/root/.m2"
     ports:
       - 8080:8080
+    volumes:
+      - ./m2-cache:/root/.m2
     restart: "unless-stopped"
