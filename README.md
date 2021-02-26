@@ -32,7 +32,7 @@ Hello, World!
 Healthcheck:
 
 ```
-$ curl -i http://localhost:8080/actuator/health
+$ curl -i http://localhost:8080/status
 HTTP/1.1 200
 Content-Type: application/vnd.spring-boot.actuator.v3+json
 Transfer-Encoding: chunked
