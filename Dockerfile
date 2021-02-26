@@ -1,9 +1,9 @@
-FROM maven:3.6.3-openjdk-11 as builder
+FROM maven:3.6.3-openjdk-15 as builder
 WORKDIR /app
 COPY . /app
 RUN mvn package
 
-FROM adoptopenjdk:11-jre-hotspot
+FROM adoptopenjdk:15-jre-hotspot
 ARG JAR_FILE=/app/target/*.jar
 WORKDIR /app
 COPY --from=builder $JAR_FILE /app/app.jar
