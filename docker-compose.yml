@@ -4,6 +4,9 @@ services:
   springboot-hello-world:
     container_name: springboot-hello-world
     restart: unless-stopped
+    mem_limit: 256m
+    mem_reservation: 128M
+    cpus: 0.5
     build:
       context: . 
       dockerfile: ./Dockerfile
