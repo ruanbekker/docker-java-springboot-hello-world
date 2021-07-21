@@ -2,7 +2,8 @@ version: "3.7"
 
 services:
   springboot-hello-world:
-    container_name: "springboot-hello-world"
+    container_name: springboot-hello-world
+    restart: unless-stopped
     build:
       context: . 
       dockerfile: ./Dockerfile
@@ -12,4 +13,12 @@ services:
       - 8080:8080
     volumes:
       - ./m2-cache:/root/.m2
-    restart: "unless-stopped"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/status"]
+      interval: 15s
+      timeout: 3s
+      retries: 5
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
